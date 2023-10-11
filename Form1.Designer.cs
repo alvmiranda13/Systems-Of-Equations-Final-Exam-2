@@ -138,11 +138,11 @@
             // resultLabel
             // 
             resultLabel.AutoSize = true;
-            resultLabel.Location = new Point(338, 261);
+            resultLabel.Location = new Point(367, 240);
             resultLabel.Name = "resultLabel";
-            resultLabel.Size = new Size(38, 15);
+            resultLabel.Size = new Size(82, 15);
             resultLabel.TabIndex = 11;
-            resultLabel.Text = "label3";
+            resultLabel.Text = "Result is here. ";
             // 
             // fileTextBox
             // 
