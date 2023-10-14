@@ -12,25 +12,28 @@ namespace fin1
 
         }
 
-        private void solveButton_Click(object sender, EventArgs e)
+        private void solveBtn_Click(object sender, EventArgs e)
+
         {
-            double[] line1 = new double[3];
-            double[] line2 = new double[3];
+            //create an array for both lines.
+            double[] lineA = new double[3];
+            double[] lineB = new double[3];
 
-            if (inputTypeComboBox.SelectedIndex == 0) // Coefficients input
+            if (inputBox.SelectedIndex == 0) // coeff input
             {
-                line1[0] = double.Parse(line1CoeffTextBox1.Text);
-                line1[1] = double.Parse(line1CoeffTextBox2.Text);
-                line1[2] = double.Parse(line1CoeffTextBox3.Text);
+                //convert to double
+                lineA[0] = double.Parse(lineAtextBox1.Text);
+                lineA[1] = double.Parse(lineAtextBox2.Text);
+                lineA[2] = double.Parse(lineAtextBox3.Text);
 
-                line2[0] = double.Parse(line2CoeffTextBox1.Text);
-                line2[1] = double.Parse(line2CoeffTextBox2.Text);
-                line2[2] = double.Parse(line2CoeffTextBox3.Text);
+                lineB[0] = double.Parse(lineBtextBox1.Text);
+                lineB[1] = double.Parse(lineBtextBox2.Text);
+                lineB[2] = double.Parse(lineBtextBox3.Text);
             }
-            else if (inputTypeComboBox.SelectedIndex == 1) // File input
+            else if (inputBox.SelectedIndex == 1) // file input
             {
                 string filePath = fileTextBox.Text;
-
+                //take the file and convert them to solve
                 if (!File.Exists(filePath))
                 {
                     MessageBox.Show("File not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -43,19 +46,25 @@ namespace fin1
 
                     if (lines.Length >= 2)
                     {
-                        string[] line1Coeffs = lines[0].Split(',');
-                        string[] line2Coeffs = lines[1].Split(',');
+                        //split the text file 
+                        string[] lineACoeffs = lines[0].Split(',');
+                        string[] lineBCoeffs = lines[1].Split(',');
+                        //convert to doubles
+                        lineA[0] = double.Parse(lineACoeffs[0]);
+                        lineA[1] = double.Parse(lineACoeffs[1]);
+                        lineA[2] = double.Parse(lineACoeffs[2]);
 
-                        line1[0] = double.Parse(line1Coeffs[0]);
-                        line1[1] = double.Parse(line1Coeffs[1]);
-                        line1[2] = double.Parse(line1Coeffs[2]);
-
-                        line2[0] = double.Parse(line2Coeffs[0]);
-                        line2[1] = double.Parse(line2Coeffs[1]);
-                        line2[2] = double.Parse(line2Coeffs[2]);
+                        lineB[0] = double.Parse(lineBCoeffs[0]);
+                        lineB[1] = double.Parse(lineBCoeffs[1]);
+                        lineB[2] = double.Parse(lineBCoeffs[2]);
                     }
                     else
                     {
+                        /* file has to be in the format of 
+                         * x, y, z
+                         * a, b, c
+                         * 
+                         */
                         MessageBox.Show("Invalid file format!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
@@ -67,12 +76,14 @@ namespace fin1
                 }
             }
 
-            // Solve the system of equations
-            double determinant = line1[0] * line2[1] - line1[1] * line2[0];
+            // solve the system of equations
+            //find the determinate 
+            double d = lineA[0] * lineB[1] - lineA[1] * lineB[0];
 
-            if (determinant == 0)
+            if (d == 0)
             {
-                if (line1[2] == line2[2])
+                //determine if both lines are the same or paralell
+                if (lineA[2] == lineB[2])
                 {
                     resultLabel.Text = "The two lines are the same line.";
                 }
@@ -83,28 +94,30 @@ namespace fin1
             }
             else
             {
-                double x = (line2[1] * line1[2] - line1[1] * line2[2]) / determinant;
-                double y = (line1[0] * line2[2] - line2[0] * line1[2]) / determinant;
+                double x = (lineA[1] * lineA[2] - lineA[1] * lineB[2]) / d;
+                double y = (lineB[0] * lineB[2] - lineB[0] * lineA[2]) / d;
                 resultLabel.Text = $"Intersection point: ({x}, {y})";
             }
         }
 
         private void inputTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (inputTypeComboBox.SelectedIndex == 0) // Coefficients input
+            if (inputBox.SelectedIndex == 0) // coefficients input
             {
-                coefficientsGroupBox.Enabled = true;
-                fileGroupBox.Enabled = false;
+                coeffBox.Enabled = true;
+                fileBox.Enabled = false;
             }
-            else if (inputTypeComboBox.SelectedIndex == 1) // File input
+            else if (inputBox.SelectedIndex == 1) // file input
             {
-                coefficientsGroupBox.Enabled = false;
-                fileGroupBox.Enabled = true;
+                coeffBox.Enabled = false;
+                fileBox.Enabled = true;
             }
         }
 
-        private void browseButton_Click(object sender, EventArgs e)
+        private void browseBtn_Click(object sender, EventArgs e)
         {
+            //create the file streaming. 
+
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text Files (*.txt)|*.txt";
             openFileDialog.Title = "Select Coefficients File";
@@ -114,5 +127,7 @@ namespace fin1
                 fileTextBox.Text = openFileDialog.FileName;
             }
         }
+
+
     }
 }

@@ -28,108 +28,110 @@
         /// </summary>
         private void InitializeComponent()
         {
-            inputTypeComboBox = new ComboBox();
-            solveButton = new Button();
-            browseButton = new Button();
-            line1CoeffTextBox1 = new TextBox();
-            line1CoeffTextBox2 = new TextBox();
-            line1CoeffTextBox3 = new TextBox();
+            inputBox = new ComboBox();
+            solveBtn = new Button();
+            browseBtn = new Button();
+            lineAtextBox1 = new TextBox();
+            lineAtextBox2 = new TextBox();
+            lineAtextBox3 = new TextBox();
             label1 = new Label();
-            line2CoeffTextBox3 = new TextBox();
-            line2CoeffTextBox2 = new TextBox();
-            line2CoeffTextBox1 = new TextBox();
+            lineBtextBox3 = new TextBox();
+            lineBtextBox2 = new TextBox();
+            lineBtextBox1 = new TextBox();
             label2 = new Label();
             resultLabel = new Label();
             fileTextBox = new TextBox();
-            coefficientsGroupBox = new GroupBox();
-            fileGroupBox = new GroupBox();
+            coeffBox = new GroupBox();
+            fileBox = new GroupBox();
+            fileBox.SuspendLayout();
             SuspendLayout();
             // 
-            // inputTypeComboBox
+            // inputBox
             // 
-            inputTypeComboBox.FormattingEnabled = true;
-            inputTypeComboBox.Items.AddRange(new object[] { "Input Coefficients", "File Input" });
-            inputTypeComboBox.Location = new Point(30, 116);
-            inputTypeComboBox.Name = "inputTypeComboBox";
-            inputTypeComboBox.Size = new Size(121, 23);
-            inputTypeComboBox.TabIndex = 0;
-            inputTypeComboBox.SelectedIndexChanged += inputTypeComboBox_SelectedIndexChanged;
+            inputBox.FormattingEnabled = true;
+            inputBox.Items.AddRange(new object[] { "Input Coefficients", "File Input" });
+            inputBox.Location = new Point(37, 38);
+            inputBox.Name = "inputBox";
+            inputBox.Size = new Size(121, 23);
+            inputBox.TabIndex = 0;
+            inputBox.Text = "Select Mode";
+            inputBox.SelectedIndexChanged += inputTypeComboBox_SelectedIndexChanged;
             // 
-            // solveButton
+            // solveBtn
             // 
-            solveButton.Location = new Point(638, 183);
-            solveButton.Name = "solveButton";
-            solveButton.Size = new Size(75, 23);
-            solveButton.TabIndex = 1;
-            solveButton.Text = "Solve";
-            solveButton.UseVisualStyleBackColor = true;
-            solveButton.Click += solveButton_Click;
+            solveBtn.Location = new Point(305, 376);
+            solveBtn.Name = "solveBtn";
+            solveBtn.Size = new Size(75, 23);
+            solveBtn.TabIndex = 1;
+            solveBtn.Text = "Solve";
+            solveBtn.UseVisualStyleBackColor = true;
+            solveBtn.Click += solveBtn_Click;
             // 
-            // browseButton
+            // browseBtn
             // 
-            browseButton.Location = new Point(638, 212);
-            browseButton.Name = "browseButton";
-            browseButton.Size = new Size(75, 23);
-            browseButton.TabIndex = 2;
-            browseButton.Text = "Browse";
-            browseButton.UseVisualStyleBackColor = true;
-            browseButton.Click += browseButton_Click;
+            browseBtn.Location = new Point(194, 51);
+            browseBtn.Name = "browseBtn";
+            browseBtn.Size = new Size(75, 23);
+            browseBtn.TabIndex = 2;
+            browseBtn.Text = "Browse";
+            browseBtn.UseVisualStyleBackColor = true;
+            browseBtn.Click += browseBtn_Click;
             // 
-            // line1CoeffTextBox1
+            // lineAtextBox1
             // 
-            line1CoeffTextBox1.Location = new Point(231, 152);
-            line1CoeffTextBox1.Name = "line1CoeffTextBox1";
-            line1CoeffTextBox1.Size = new Size(100, 23);
-            line1CoeffTextBox1.TabIndex = 3;
+            lineAtextBox1.Location = new Point(164, 86);
+            lineAtextBox1.Name = "lineAtextBox1";
+            lineAtextBox1.Size = new Size(132, 23);
+            lineAtextBox1.TabIndex = 3;
             // 
-            // line1CoeffTextBox2
+            // lineAtextBox2
             // 
-            line1CoeffTextBox2.Location = new Point(367, 152);
-            line1CoeffTextBox2.Name = "line1CoeffTextBox2";
-            line1CoeffTextBox2.Size = new Size(100, 23);
-            line1CoeffTextBox2.TabIndex = 4;
+            lineAtextBox2.Location = new Point(164, 116);
+            lineAtextBox2.Name = "lineAtextBox2";
+            lineAtextBox2.Size = new Size(132, 23);
+            lineAtextBox2.TabIndex = 4;
             // 
-            // line1CoeffTextBox3
+            // lineAtextBox3
             // 
-            line1CoeffTextBox3.Location = new Point(487, 152);
-            line1CoeffTextBox3.Name = "line1CoeffTextBox3";
-            line1CoeffTextBox3.Size = new Size(100, 23);
-            line1CoeffTextBox3.TabIndex = 5;
+            lineAtextBox3.Location = new Point(164, 145);
+            lineAtextBox3.Name = "lineAtextBox3";
+            lineAtextBox3.Size = new Size(132, 23);
+            lineAtextBox3.TabIndex = 5;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(148, 155);
+            label1.Location = new Point(120, 89);
             label1.Name = "label1";
             label1.Size = new Size(38, 15);
             label1.TabIndex = 6;
             label1.Text = "Line 1";
             // 
-            // line2CoeffTextBox3
+            // lineBtextBox3
             // 
-            line2CoeffTextBox3.Location = new Point(487, 194);
-            line2CoeffTextBox3.Name = "line2CoeffTextBox3";
-            line2CoeffTextBox3.Size = new Size(100, 23);
-            line2CoeffTextBox3.TabIndex = 7;
+            lineBtextBox3.Location = new Point(403, 145);
+            lineBtextBox3.Name = "lineBtextBox3";
+            lineBtextBox3.Size = new Size(132, 23);
+            lineBtextBox3.TabIndex = 7;
             // 
-            // line2CoeffTextBox2
+            // lineBtextBox2
             // 
-            line2CoeffTextBox2.Location = new Point(367, 194);
-            line2CoeffTextBox2.Name = "line2CoeffTextBox2";
-            line2CoeffTextBox2.Size = new Size(100, 23);
-            line2CoeffTextBox2.TabIndex = 8;
+            lineBtextBox2.Location = new Point(403, 116);
+            lineBtextBox2.Name = "lineBtextBox2";
+            lineBtextBox2.Size = new Size(132, 23);
+            lineBtextBox2.TabIndex = 8;
             // 
-            // line2CoeffTextBox1
+            // lineBtextBox1
             // 
-            line2CoeffTextBox1.Location = new Point(231, 194);
-            line2CoeffTextBox1.Name = "line2CoeffTextBox1";
-            line2CoeffTextBox1.Size = new Size(100, 23);
-            line2CoeffTextBox1.TabIndex = 9;
+            lineBtextBox1.Location = new Point(403, 83);
+            lineBtextBox1.Name = "lineBtextBox1";
+            lineBtextBox1.Size = new Size(132, 23);
+            lineBtextBox1.TabIndex = 9;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(148, 202);
+            label2.Location = new Point(349, 86);
             label2.Name = "label2";
             label2.Size = new Size(38, 15);
             label2.TabIndex = 10;
@@ -138,7 +140,7 @@
             // resultLabel
             // 
             resultLabel.AutoSize = true;
-            resultLabel.Location = new Point(367, 240);
+            resultLabel.Location = new Point(120, 221);
             resultLabel.Name = "resultLabel";
             resultLabel.Size = new Size(82, 15);
             resultLabel.TabIndex = 11;
@@ -146,72 +148,76 @@
             // 
             // fileTextBox
             // 
-            fileTextBox.Location = new Point(30, 309);
+            fileTextBox.Enabled = false;
+            fileTextBox.Location = new Point(53, 22);
             fileTextBox.Name = "fileTextBox";
-            fileTextBox.Size = new Size(457, 23);
+            fileTextBox.ReadOnly = true;
+            fileTextBox.Size = new Size(398, 23);
             fileTextBox.TabIndex = 12;
             // 
-            // coefficientsGroupBox
+            // coeffBox
             // 
-            coefficientsGroupBox.Location = new Point(30, 338);
-            coefficientsGroupBox.Name = "coefficientsGroupBox";
-            coefficientsGroupBox.Size = new Size(200, 100);
-            coefficientsGroupBox.TabIndex = 13;
-            coefficientsGroupBox.TabStop = false;
-            coefficientsGroupBox.Text = "Coefficients";
+            coeffBox.Location = new Point(111, 67);
+            coeffBox.Name = "coeffBox";
+            coeffBox.Size = new Size(478, 116);
+            coeffBox.TabIndex = 13;
+            coeffBox.TabStop = false;
+            coeffBox.Text = "Coefficients";
             // 
-            // fileGroupBox
+            // fileBox
             // 
-            fileGroupBox.Location = new Point(287, 338);
-            fileGroupBox.Name = "fileGroupBox";
-            fileGroupBox.Size = new Size(200, 100);
-            fileGroupBox.TabIndex = 14;
-            fileGroupBox.TabStop = false;
-            fileGroupBox.Text = "Files";
+            fileBox.Controls.Add(fileTextBox);
+            fileBox.Controls.Add(browseBtn);
+            fileBox.Location = new Point(111, 269);
+            fileBox.Name = "fileBox";
+            fileBox.Size = new Size(478, 86);
+            fileBox.TabIndex = 14;
+            fileBox.TabStop = false;
+            fileBox.Text = "Files";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(fileGroupBox);
-            Controls.Add(coefficientsGroupBox);
-            Controls.Add(fileTextBox);
+            ClientSize = new Size(617, 414);
             Controls.Add(resultLabel);
             Controls.Add(label2);
-            Controls.Add(line2CoeffTextBox1);
-            Controls.Add(line2CoeffTextBox2);
-            Controls.Add(line2CoeffTextBox3);
+            Controls.Add(lineBtextBox1);
+            Controls.Add(lineBtextBox2);
+            Controls.Add(lineBtextBox3);
             Controls.Add(label1);
-            Controls.Add(line1CoeffTextBox3);
-            Controls.Add(line1CoeffTextBox2);
-            Controls.Add(line1CoeffTextBox1);
-            Controls.Add(browseButton);
-            Controls.Add(solveButton);
-            Controls.Add(inputTypeComboBox);
+            Controls.Add(lineAtextBox3);
+            Controls.Add(lineAtextBox2);
+            Controls.Add(lineAtextBox1);
+            Controls.Add(solveBtn);
+            Controls.Add(inputBox);
+            Controls.Add(fileBox);
+            Controls.Add(coeffBox);
             Name = "Form1";
             Text = "Systems Of Equations";
             Load += Form1_Load;
+            fileBox.ResumeLayout(false);
+            fileBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private ComboBox inputTypeComboBox;
-        private Button solveButton;
-        private Button browseButton;
-        private TextBox line1CoeffTextBox1;
-        private TextBox line1CoeffTextBox2;
-        private TextBox line1CoeffTextBox3;
+        private ComboBox inputBox;
+        private Button solveBtn;
+        private Button browseBtn;
+        private TextBox lineAtextBox1;
+        private TextBox lineAtextBox2;
+        private TextBox lineAtextBox3;
         private Label label1;
-        private TextBox line2CoeffTextBox3;
-        private TextBox line2CoeffTextBox2;
-        private TextBox line2CoeffTextBox1;
+        private TextBox lineBtextBox3;
+        private TextBox lineBtextBox2;
+        private TextBox lineBtextBox1;
         private Label label2;
         private Label resultLabel;
         private TextBox fileTextBox;
-        private GroupBox coefficientsGroupBox;
-        private GroupBox fileGroupBox;
+        private GroupBox coeffBox;
+        private GroupBox fileBox;
     }
 }
